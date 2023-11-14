@@ -1,0 +1,19 @@
+./vendor/bin/sail up -d => containerları ayağa kaldırır ve arka planda çalışmaya devam eder. 
+    Not : -d yazmasan terminalekranı containerların loglarını göstermeye devam eder
+
+docker exec -it container_name bash => ilgili container ın içerisine bash yetkisi ile bağlanır.
+    yani container terminaline erişim sağlar.
+    container_name leri görmek için "docker container ps" komutunu kullanablirsin
+    senin için önemli olan web server container ı
+
+ container a bağlandıktan sonra "php artisan migrate:fresh --seed" databaseleri 0 dan oluşturur 
+    ve bd deki dataları insert eder.
+    "--seed" kullanılmazsa db dataları yazılmaz boş bir db oluşur.
+    seederlar ana dizindeki database/seeders klasörü altında.
+
+Routes => buradan istek atılacak olan end point ler belirtilir.
+
+controller oluşturma => "php artisan make:controller Auth/LoginController --invokable"
+
+Request ler => gelen isteklerin validasyonunu yapar. => php artisan make:request Auth/LoginRequest
+
